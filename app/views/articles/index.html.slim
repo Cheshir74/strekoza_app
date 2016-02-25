@@ -2,7 +2,7 @@ div class="center hero-unit"
   h1 Статьи
 
   -@articles.each do |article|
-    h4
-      = link_to article.title, article
+
+     p = link_to article.title, article
 
   =link_to "Новая запись", new_article_path, class: "btn btn-large btn-primary"
