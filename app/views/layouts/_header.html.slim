@@ -4,5 +4,10 @@ header class="navbar navbar-fixed-top navbar-inverse"
       = link_to "Стрекоза174", root_path, id: "logo"
       nav
         ul class="nav navbar-nav pull-right inline"
-          =link_to "Главная", '#', class: "btn btn-large btn-primary"
-          =link_to "Войти", '#', class: "btn btn-large btn-primary"
+
+          = link_to "Главная", root_path, class: "btn btn-large btn-primary"
+
+          - if user_signed_in?
+            =link_to "Выйти", destroy_user_session_path, :method => :delete, class: "btn btn-large btn-primary"
+          - else
+            =link_to "Войти", new_user_session_path, class: "btn btn-large btn-primary"
