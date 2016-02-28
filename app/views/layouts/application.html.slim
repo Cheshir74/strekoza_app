@@ -9,5 +9,11 @@ html
   body
     =render 'layouts/header'
     div class="container"
+      p class="notice"
+        = notice
+
+      p class="alert"
+        = alert
+
       = yield
 
