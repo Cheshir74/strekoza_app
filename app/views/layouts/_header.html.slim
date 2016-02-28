@@ -4,9 +4,10 @@ header class="navbar navbar-fixed-top navbar-inverse"
       = link_to "Стрекоза174", root_path, id: "logo"
       nav
         ul class="nav navbar-nav pull-right inline"
+          - if user_signed_in?
+           span style="color:white;" Привет, #{current_user.email }  &nbsp;
 
           = link_to "Главная", root_path, class: "btn btn-large btn-primary"
-
           - if user_signed_in?
             =link_to "Выйти", destroy_user_session_path, :method => :delete, class: "btn btn-large btn-primary"
           - else
